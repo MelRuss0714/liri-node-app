@@ -8,7 +8,11 @@ var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 
 var command = process.argv[2];
-var query = process.argv[3];
+var query = "";
+for (var i = 3; i = process.argv.length; i++){
+    query = JSON.stringify(process.argv[i]);
+}
+console.log(query);
 
 function myTweets() {
     //Show the last 20 tweets and when they were created
@@ -32,7 +36,7 @@ function myTweets() {
 
 };
 function spotifySong() {
-    //show the artist, song name, preview link of the song, and album for the song at process.argv[4]
+    //show the artist, song name, preview link of the song, and album for the song at process.argv[3]
 
 
     if (query === undefined) {
